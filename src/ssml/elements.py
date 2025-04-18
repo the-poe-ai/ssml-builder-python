@@ -2,10 +2,12 @@ from abc import ABC, abstractmethod
 import xml.sax.saxutils as saxutils
 from typing import Optional
 
+
 class SsmlElement(ABC):
     @abstractmethod
     def render(self) -> str:
         ...
+
 
 class PlainText(SsmlElement):
     def __init__(self, text: str):
@@ -13,6 +15,7 @@ class PlainText(SsmlElement):
 
     def render(self) -> str:
         return self.text
+
 
 class Break(SsmlElement):
     def __init__(self, strength: str = "medium", time: Optional[str] = None):
@@ -26,6 +29,7 @@ class Break(SsmlElement):
         if self.time:
             attrs.append(f'time="{self.time}"')
         return f"<break {' '.join(attrs)}/>"
+
 
 class SayAs(SsmlElement):
     def __init__(self, text: str, interpret_as: str, format: Optional[str] = None):

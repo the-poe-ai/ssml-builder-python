@@ -4,6 +4,7 @@ from ..core import SsmlBuilder
 
 router = APIRouter()
 
+
 @router.post("/ssml", response_model=SsmlResponse)
 def generate_ssml(req: SsmlRequest):
     b = SsmlBuilder()

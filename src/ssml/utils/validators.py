@@ -1,7 +1,8 @@
 import re
 
 SSML_TIME_PATTERN = re.compile(r"^\d+(ms|s)$")
-STRENGTHS = {"none","x-weak","weak","medium","strong","x-strong"}
+STRENGTHS = {"none", "x-weak", "weak", "medium", "strong", "x-strong"}
+
 
 def validate_break(strength: str = None, time: str = None):
     if strength and strength not in STRENGTHS:

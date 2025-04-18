@@ -1,5 +1,6 @@
 from ..core import SsmlBuilder
 
+
 class GoogleSsmlBuilder(SsmlBuilder):
     def build(self, pretty: bool = True) -> str:
         ssml = super().build(pretty=False)

@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 from typing import List, Optional
 
+
 class ElementIn(BaseModel):
     type: str
     text: Optional[str]
@@ -8,6 +9,7 @@ class ElementIn(BaseModel):
     time: Optional[str]
     interpret_as: Optional[str]
     format: Optional[str]
+
 
 class SsmlRequest(BaseModel):
     # Either the user passes `elements`, or a single `text_block`
