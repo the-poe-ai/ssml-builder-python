@@ -27,3 +27,16 @@ class SsmlBuilder:
         if pretty:
             inner = "\n".join("  " + line for line in inner.splitlines())
         return f"<speak>\n{inner}\n</speak>"
+    def from_text(self, text: str, pause: str = "500ms") -> "SsmlBuilder":
+        """
+        Take a block of natural language, split into sentences,
+        and auto‑insert a default pause between them.
+        """
+        import re
+        # Split on period, exclamation or question mark + space
+        sentences = re.split(r'(?<=[\.!?]) +', text.strip())
+        for i, sent in enumerate(sentences):
+            self.text(sent)
+            if i < len(sentences) - 1:
+                self.break_time(time=pause)
+        return self

@@ -10,7 +10,11 @@ class ElementIn(BaseModel):
     format: Optional[str]
 
 class SsmlRequest(BaseModel):
-    elements: List[ElementIn]
+    # Either the user passes `elements`, or a single `text_block`
+    elements: Optional[List[ElementIn]] = None
+    text_block: Optional[str] = None
+    pause_ms: Optional[str] = "500ms"
+
 
 class SsmlResponse(BaseModel):
     ssml: str
