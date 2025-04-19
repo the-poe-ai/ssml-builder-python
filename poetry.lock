@@ -689,6 +689,18 @@ files = [
 ]
 
 [[package]]
+name = "scalar-fastapi"
+version = "1.0.3"
+description = "This plugin provides an easy way to render a beautiful API reference based on a OpenAPI/Swagger file with FastAPI."
+optional = false
+python-versions = "*"
+groups = ["main"]
+files = [
+    {file = "scalar_fastapi-1.0.3-py3-none-any.whl", hash = "sha256:4a47a140795097ad034518ce0e32940f2c54f0f4bc60e4c3289ca30a7e6f954d"},
+    {file = "scalar_fastapi-1.0.3.tar.gz", hash = "sha256:9e9cb8398e298cd435a0171eebe1675b8899eb21e47c238db0d48783143f0ffb"},
+]
+
+[[package]]
 name = "sniffio"
 version = "1.3.1"
 description = "Sniff out which async library your code is running under"
@@ -817,4 +829,4 @@ test = ["covdefaults (>=2.3)", "coverage (>=7.2.7)", "coverage-enable-subprocess
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.9"
-content-hash = "ccd0ee2a32d5dd015835afae2b41b1d2d9cb66e4034fa6e669e6177cf6dc1e7d"
+content-hash = "eeebc06dbdb598155ea91bf2f7f7e0dbd3dfe64c97f30055f2b238ea6e01c4c9"
